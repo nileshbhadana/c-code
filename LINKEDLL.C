@@ -4,6 +4,8 @@
 #define NULL 0
 void  display();
 void sum();
+void count();
+void insertbeginning();
 struct list
 {
 int val;
@@ -43,11 +45,11 @@ switch(ch)
 {
 case 1:sum();
 break;
-/*case 2:count();
+case 2:count();
 break;
 case 3:insertbeginning();
 break;
-case 4:insertafteritem();
+/*case 4:insertafteritem();
 break;
 case 5:insertafterpos();
 break;
@@ -90,4 +92,33 @@ sum=sum+ptr->val;
 ptr=ptr->next;
 }
 printf("Sum= %d",sum);
+}
+
+void count()
+{
+int ch=0;
+while(ptr!=NULL)
+{
+ch++;
+ptr=ptr->next;
+}
+printf("Total Nodes= %d",ch);
+}
+
+void insertbeginning()
+{
+node=(struct list*)malloc(sizeof(struct list));
+printf("Enter val to input:");
+scanf("%d",&node->val);
+if(node==NULL)
+{
+printf("Overflowed...");
+exit(0);
+}
+else
+{
+node->next=start;
+start=node;
+}
+display();
 }
