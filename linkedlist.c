@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include<conio.h>
-#include<stdlib.h>
+#include<malloc.h>
 
 #define NULL 0
 struct list
